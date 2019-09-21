@@ -8,17 +8,21 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Hexo搭建个人博客 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="搭建博客技巧成功搭建  常见错误乱码">
+  <meta name="description" content="Hexo搭建博客遇到的各种问题及解决（个人笔记） 总结一下我Hexo搭建博客遇到各种各样的问题及解决方法。 git和vimWin10没有git和vim，在搭建之前需要去官网下载并配置。Git官方下载 https://git-scm.com/downloads/;vim官方下载 https://www.vim.org/download.php。  git注意环境变量配置。 vim问题：在使用vim是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo搭建个人博客">
 <meta property="og:url" content="http://yoursite.com/2019/09/20/Hexo搭建个人博客/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="搭建博客技巧成功搭建  常见错误乱码">
+<meta property="og:description" content="Hexo搭建博客遇到的各种问题及解决（个人笔记） 总结一下我Hexo搭建博客遇到各种各样的问题及解决方法。 git和vimWin10没有git和vim，在搭建之前需要去官网下载并配置。Git官方下载 https://git-scm.com/downloads/;vim官方下载 https://www.vim.org/download.php。  git注意环境变量配置。 vim问题：在使用vim是">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-20T11:39:34.256Z">
+<meta property="og:image" content="http://yoursite.com/.com//%E6%96%87%E4%BB%B6.png">
+<meta property="og:image" content="http://yoursite.com/.com//Span.png">
+<meta property="og:image" content="http://yoursite.com/.com//%E7%AB%AF%E5%8F%A3.png">
+<meta property="og:updated_time" content="2019-09-21T08:46:13.008Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo搭建个人博客">
-<meta name="twitter:description" content="搭建博客技巧成功搭建  常见错误乱码">
+<meta name="twitter:description" content="Hexo搭建博客遇到的各种问题及解决（个人笔记） 总结一下我Hexo搭建博客遇到各种各样的问题及解决方法。 git和vimWin10没有git和vim，在搭建之前需要去官网下载并配置。Git官方下载 https://git-scm.com/downloads/;vim官方下载 https://www.vim.org/download.php。  git注意环境变量配置。 vim问题：在使用vim是">
+<meta name="twitter:image" content="http://yoursite.com/.com//%E6%96%87%E4%BB%B6.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -174,10 +178,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="搭建博客技巧"><a href="#搭建博客技巧" class="headerlink" title="搭建博客技巧"></a>搭建博客技巧</h2><p>成功搭建</p>
+        <h1 id="Hexo搭建博客遇到的各种问题及解决（个人笔记）"><a href="#Hexo搭建博客遇到的各种问题及解决（个人笔记）" class="headerlink" title="Hexo搭建博客遇到的各种问题及解决（个人笔记）"></a>Hexo搭建博客遇到的各种问题及解决（个人笔记）</h1><hr>
+<p>总结一下我Hexo搭建博客遇到各种各样的问题及解决方法。</p>
+<h2 id="git和vim"><a href="#git和vim" class="headerlink" title="git和vim"></a>git和vim</h2><p>Win10没有git和vim，在搭建之前需要去官网下载并配置。<br>Git官方下载 <a href="https://git-scm.com/downloads/" target="_blank" rel="noopener">https://git-scm.com/downloads/</a>;<br>vim官方下载 <a href="https://www.vim.org/download.php" target="_blank" rel="noopener">https://www.vim.org/download.php</a>。</p>
 <hr>
-<h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><p>乱码</p>
+<h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><p>注意环境变量配置。</p>
+<h3 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h3><p>问题：在使用vim是，我发现创建的文章，中文都是乱码。</p>
+<p>解决：找到gvim的安装路径，里面有一个这样的文件<img src="/.com//%E6%96%87%E4%BB%B6.png" alt>；<br>使用记事本打开，在开头添加如下：</p>
+<blockquote>
+<p>set nocompatible<br>set encoding=utf-8<br>set fileencoding=utf-8,chinese,latin-1<br>if has(“win64”)<br>  set fileencoding=chinese<br>else<br>  set fileencoding=utf-8<br>endif<br>source $VIMRUNTIME/delmenu.vim<br>source $VIMRUNTIME/menu.vim<br>language messages zh_CN.utf-8<br>set gfn=Consolas:h11<br>set nu<br>set cindent<br>source $VIMRUNTIME/vimrc_example.vim<br>source $VIMRUNTIME/mswin.vim<br>behave mswin</p>
+</blockquote>
 <hr>
+<p>然后保存退出就好啦。对了，可能会遇到权限不够，无法保存，这个更改一下权限就OK了。</p>
+<hr>
+<h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2><p>问题：将博客部署到GitHub上时，输入hexo d，出现错误 <img src="/.com//Span.png" alt>。<br>解决：1. 启动Git Bash，进入命令界面；<br>      2. 生成密钥对。输入命令：ssh-keygen -t rsa -C回车三次。找到里面的.ssh路径，打开.ssh文件，找到id_rsa.pub并用记事本打开，这就是我们需要的密钥。<br>      3. 拿到密钥后，回到Git Bash命令界面，输入命令：ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>检测是否成功绑定Github。<br>        a. 在这里我出现了Connection reset by 192.30.253.112 port 22<br>        b. 在防火墙高级安全中新建入站规则，选择端口22，允许连接，输入名称和描述 <img src="/.com//%E7%AB%AF%E5%8F%A3.png" alt>。<br>        c. 然后回到Git Bash上重新输入ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>便可成功检测到Github绑定成功。<br>      4. 然后在Git Bash上进入blog目录下输入hexo d即可成功部署到远端。</p>
+<hr>
+<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>在克隆主题时出现RPC failed，无法成功克隆，因为postBuffer的默认值x太小，需要调整它的大小。<br>解决方法：在Git Bash上输入git config –list命令，重新配置postBuffer的值。这里我改的s值是：http.postbuffer=524288000。</p>
+<hr>
+<p>Over!</p>
 
       
 
