@@ -62,14 +62,13 @@
 <meta property="og:site_name" content="麦芽糖">
 <meta property="og:description" content="Hexo搭建博客遇到的各种问题及解决（个人笔记） 总结一下我Hexo搭建博客遇到各种各样的问题及解决方法。 git和vimWin10没有git和vim，在搭建之前需要去官网下载并配置。Git官方下载 https://git-scm.com/downloads/;vim官方下载 https://www.vim.org/download.php。  git注意环境变量配置。 vim问题：在使用vim是">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/09/20/Hexo搭建个人博客/images/file.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/09/20/Hexo搭建个人博客/images/span.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/09/20/Hexo搭建个人博客/images/in.jpg">
-<meta property="og:updated_time" content="2019-09-21T16:51:23.089Z">
+<meta property="og:updated_time" content="2019-09-21T17:01:05.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo搭建个人博客">
 <meta name="twitter:description" content="Hexo搭建博客遇到的各种问题及解决（个人笔记） 总结一下我Hexo搭建博客遇到各种各样的问题及解决方法。 git和vimWin10没有git和vim，在搭建之前需要去官网下载并配置。Git官方下载 https://git-scm.com/downloads/;vim官方下载 https://www.vim.org/download.php。  git注意环境变量配置。 vim问题：在使用vim是">
-<meta name="twitter:image" content="http://yoursite.com/2019/09/20/Hexo搭建个人博客/images/file.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/20/Hexo搭建个人博客/images/span.jpg">
   <link rel="canonical" href="http://yoursite.com/2019/09/20/Hexo搭建个人博客/">
 
 
@@ -261,7 +260,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-22 00:51:23" itemprop="dateModified" datetime="2019-09-22T00:51:23+08:00">2019-09-22</time>
+                <time title="修改时间：2019-09-22 01:01:05" itemprop="dateModified" datetime="2019-09-22T01:01:05+08:00">2019-09-22</time>
               </span>
             
           
@@ -283,7 +282,7 @@
 <hr>
 <h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><p>注意环境变量配置。</p>
 <h3 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h3><p>问题：在使用vim是，我发现创建的文章，中文都是乱码。</p>
-<p>解决：找到gvim的安装路径，里面有一个这样的文件<img src="images/file.jpg" alt>；<br>使用记事本打开，在开头添加如下：</p>
+<p>解决：找到gvim的安装路径，里面有一个这样的文件 [% asset_img file.jpg 图片1 %]<br>使用记事本打开，在开头添加如下：</p>
 <blockquote>
 <p>set nocompatible<br>set encoding=utf-8<br>set fileencoding=utf-8,chinese,latin-1<br>if has(“win64”)<br>  set fileencoding=chinese<br>else<br>  set fileencoding=utf-8<br>endif<br>source $VIMRUNTIME/delmenu.vim<br>source $VIMRUNTIME/menu.vim<br>language messages zh_CN.utf-8<br>set gfn=Consolas:h11<br>set nu<br>set cindent<br>source $VIMRUNTIME/vimrc_example.vim<br>source $VIMRUNTIME/mswin.vim<br>behave mswin</p>
 </blockquote>
